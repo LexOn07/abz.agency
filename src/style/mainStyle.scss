@@ -1,0 +1,86 @@
+
+/*Import Font*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+/*Color Theme*/
+$colorPrimary: #ef5b4c;
+$colorSecondary: #007fbb;
+$colorBackground: #fff;
+$colorBackgroundGrey: #f9f9f9;
+$colorInput: #b2b9c0;
+$colorButtonHover: #d24335;
+/*----------*/
+$colorTextTitle: #fff; //color for all title text
+
+/*Config Media Height*/
+$mediaTable: 770px;
+$mediaMobile: 460px;
+
+/*Config Height*/
+$nav-height: 60px; //height for navbar
+
+
+/*Import Style*/
+@import "textStyle";
+
+/*Mixin*/
+@mixin grid-width($n, $gridColumn) {                             //Для использования: n-количество занимаймых колонок из gridColumn-всего колонок
+    flex-basis: calc(100% / #{$gridColumn} * #{$n} - 30px);
+    margin: 0 15px;
+    box-sizing: border-box;
+}
+@mixin rubber(){
+    flex-grow: 1;
+    flex-basis: 1;
+}
+
+/*Any*/
+a{
+    margin: 0 15px;
+    font-size: 10pt;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+    color: #000;   
+    text-decoration: none;
+    &:hover{
+        color: $colorPrimary;
+        cursor: pointer;
+    } 
+}
+button{
+    width: 210px;
+    height: 38px;
+    border: none;
+    border-radius: 5px;
+    background-color: $colorPrimary;
+    color: $colorTextTitle;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12pt;
+    letter-spacing: 0.2px;
+    outline: none;
+}
+button:hover{
+    background-color: $colorButtonHover;
+    cursor: pointer;
+}
+button:disabled{
+    background-color: $colorInput;
+}
+.flatButton{
+    background-color: transparent;
+    color: $colorPrimary;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+.flatButton:hover{
+    background-color: transparent;
+    color: $colorButtonHover;
+}
+.block{
+    margin: 0 30px;
+}
+#app{
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
